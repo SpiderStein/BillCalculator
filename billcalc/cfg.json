@@ -1,0 +1,9 @@
+{
+    "Water": {
+        "LowRateCommission": 7.385,
+        "HighRateCommission": 13.461
+    },
+    "Electricity": {
+        "CommissionRate": 0.5246
+    }
+}
