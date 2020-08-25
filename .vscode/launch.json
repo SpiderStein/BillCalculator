@@ -12,7 +12,11 @@
             "program": "${workspaceFolder}/main/billcalc.go",
             "env": {
                 "billcalcCfgPath": "${workspaceFolder}/billcalc/cfg.json"
-            }
+            },
+            "args": [
+                "electricity",
+                "-c"
+            ]
         }
     ]
 }
