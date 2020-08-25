@@ -12,13 +12,23 @@ func main() {
 	switch selectedBillType {
 	case "water":
 		waterCmd := flag.NewFlagSet("water", flag.ContinueOnError)
-		waterCmd.Float64("c", 7.385, "Water consumption in m3 unit")
+		consumption := waterCmd.Float64("c", -1, billcalc.WaterCmdArgHelp)
+		if flag.Parse(); *consumption < 0 {
+			break
+		}
+		bill := billcalc.CalcWaterBill(*consumption)
+		fmt.Printf("The water bill is the following: %v", bill)
+		return
 	case "electricity":
 		electricityCmd := flag.NewFlagSet("electricity", flag.ContinueOnError)
-		electricityCmd.Float64("c", 7.385, "Electricity consumption in 1000imp/kWh => what's written in the meter")
-	default:
-		fmt.Println(billcalc.Help)
+		consumption := electricityCmd.Float64("c", -1, billcalc.ElectricityCmdArgHelp)
+		if flag.Parse(); *consumption < 0 {
+			break
+		}
+		bill := billcalc.CalcElectricityBill(*consumption)
+		fmt.Printf("The electricity bill is the following: %v", bill)
 		return
 	}
-	// cfg := billcalc.GetCfg()
+
+	fmt.Println(billcalc.Help)
 }
