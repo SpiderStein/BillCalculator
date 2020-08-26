@@ -14,8 +14,9 @@
                 "billcalcCfgPath": "${workspaceFolder}/billcalc/cfg.json"
             },
             "args": [
-                "electricity",
-                "-c"
+                "water",
+                "-c",
+                "8.1"
             ]
         }
     ]

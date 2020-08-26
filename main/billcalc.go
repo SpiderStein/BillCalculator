@@ -15,6 +15,7 @@ func main() {
 		}
 	}()
 
+	cfg := billcalc.GetCfg()
 	selectedBillType := os.Args[1]
 	switch selectedBillType {
 	case "water":
@@ -23,7 +24,7 @@ func main() {
 		if err := waterCmd.Parse(os.Args[2:4]); *consumption < 0 || err != nil {
 			break
 		}
-		bill := billcalc.CalcWaterBill(*consumption)
+		bill := billcalc.CalcWaterBill(*consumption, cfg.Water.LowCommissionConsumption, cfg.Water.LowCommission, cfg.Water.HighCommission)
 		fmt.Printf("The water bill is the following: %v\n", bill)
 		return
 	case "electricity":
@@ -32,7 +33,7 @@ func main() {
 		if err := electricityCmd.Parse(os.Args[2:4]); *consumption < 0 || err != nil {
 			break
 		}
-		bill := billcalc.CalcElectricityBill(*consumption)
+		bill := billcalc.CalcElectricityBill(*consumption, cfg.Electricity.Commission)
 		fmt.Printf("The electricity bill is the following: %v\n", bill)
 		return
 	}

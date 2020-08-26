@@ -10,11 +10,12 @@ import (
 // Cfg contains billcalc executable's cfg values
 type Cfg struct {
 	Water struct {
-		LowRateCommission  float64
-		HighRateCommission float64
+		LowCommissionConsumption float64
+		LowCommission            float64
+		HighCommission           float64
 	}
 	Electricity struct {
-		CommissionRate float64
+		Commission float64
 	}
 }
 
