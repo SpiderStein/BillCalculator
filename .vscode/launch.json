@@ -11,12 +11,12 @@
             "mode": "debug",
             "program": "${workspaceFolder}/main/billcalc.go",
             "env": {
-                "billcalcCfgPath": "${workspaceFolder}/billcalc/cfg.json"
+                "BillcalcCfgPath": "${workspaceFolder}/billcalc/cfg.json"
             },
             "args": [
-                "water",
+                "electricity",
                 "-c",
-                "8.1"
+                "418.65"
             ]
         }
     ]

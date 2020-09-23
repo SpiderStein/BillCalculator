@@ -19,10 +19,10 @@ type Cfg struct {
 	}
 }
 
-// GetCfg gets the cfg from the path that's written in the env var "billcalcCfgPath".
+// GetCfg gets the cfg from the path that's written in the env var "BillcalcCfgPath".
 // Panics if cannot find/read the cfg file, or if unmarshaling it fails.
 func GetCfg() *Cfg {
-	cfgPath := os.Getenv("billcalcCfgPath")
+	cfgPath := os.Getenv("BillcalcCfgPath")
 	unmarshaledCfg, err := ioutil.ReadFile(cfgPath)
 	if err != nil {
 		panic(`cfg is not found.
