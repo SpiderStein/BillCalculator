@@ -2,7 +2,7 @@
     "Water": {
         "LowCommissionConsumption": 3.5,
         "LowCommission": 7.385,
-        "HighCommission": 13.461
+        "HighCommission": 13.46085
     },
     "Electricity": {
         "Commission": 0.4484
